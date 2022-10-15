@@ -1,30 +1,38 @@
-import javax.swing.JOptionPane;
+import java.util.Scanner;
 
 public class Latihan03 {
-	
+
 	public static void main(String[] args) {
-		JOptionPane.showMessageDialog(null, "====PROGRAM PILIH MENU SARAPAN====");
-		String masukkan = JOptionPane.showInputDialog(null, "Menu Sarapan: \n"
-				+ "1. Nasi Goreng\n"
-				+ "2. Bubur Ayam\n"
-				+ "3. Soto Ayam\n\n"
-				+ "Pilihan : ");
+		// TODO Auto-generated method stub
+		System.out.println("Menu Sarapan :");
+		System.out.println("1. Nasi Goreng");
+		System.out.println("2. Bubur Ayam");
+		System.out.println("3. Soto Ayam");
 		
-		int pilihan = Integer.parseInt(masukkan);
+		int pilih;
+		Scanner inputUser = new Scanner(System.in);
 		
-		switch(pilihan) {
-			case 1:
-				JOptionPane.showMessageDialog(null, "Anda memesan Nasi Goreng dengan harga Rp 22.000,-");
+		System.out.print("Pilih Menu = ");
+		pilih = inputUser.nextInt();
+		
+		inputUser.close();
+		switch(pilih) {
+			case 1 :{
+				System.out.println("Anda memesan Nasi Goreng dengan harga Rp22.000,-");
+			}
 			break;
-			case 2:
-				JOptionPane.showMessageDialog(null, "Anda memesan Bubur Ayam dengan harga Rp 15.000,-");
+		
+			case 2 :{
+				System.out.println("Anda memesan Bubur Ayam dengan harga Rp15.000,-");
+			}
 			break;
-			case 3:
-				JOptionPane.showMessageDialog(null, "Anda memesan Soto Ayam dengan harga Rp 25.000,-");
+			case 3 :{
+				System.out.println("Anda memesan Soto Ayam dengan harga Rp 25.000,-");
+			}
 			break;
-			default:
-				JOptionPane.showMessageDialog(null, "Maaf menu yang Anda masukkan salah");
+			default :{
+				System.out.println("Maaf menu yang anda masukan salah.");
+			}
 		}
 	}
-	
 }

@@ -1,44 +1,47 @@
-import javax.swing.JOptionPane;
+import java.util.Scanner;
 
 public class Latihan06 {
 	
+
 	public static void main(String[] args) {
-		JOptionPane.showMessageDialog(null, "====PROGRAM PILIH MENU SARAPAN====");
-		boolean isPilih = true;
-		int pilihanUlang;
-		while(isPilih) {
-			String masukkan = JOptionPane.showInputDialog(null, "Menu Sarapan: \n"
-					+ "1. Nasi Goreng\n"
-					+ "2. Bubur Ayam\n"
-					+ "3. Soto Ayam\n\n"
-					+ "Pilihan : ");
+		String jawab;
+		int pilih;
+		Scanner inputUser = new Scanner(System.in);
+		
+		do {
+			System.out.println("Menu Sarapan :");
+			System.out.println("1. Nasi Goreng");
+			System.out.println("2. Bubur Ayam");
+			System.out.println("3. Soto Ayam");
 			
-			int pilihan = Integer.parseInt(masukkan);
+			System.out.print("Pilih Menu = ");
+			pilih = inputUser.nextInt();
+			inputUser.nextLine();
 			
-			switch(pilihan) {
-			case 1:
-				JOptionPane.showMessageDialog(null, "Anda memesan Nasi Goreng dengan harga Rp 22.000,-");
+			
+			switch(pilih) {
+				case 1 :
+					System.out.println("Anda memesan Nasi Goreng dengan harga Rp22.000,-");
+				
 				break;
-			case 2:
-				JOptionPane.showMessageDialog(null, "Anda memesan Bubur Ayam dengan harga Rp 15.000,-");
+			
+				case 2 :
+					System.out.println("Anda memesan Bubur Ayam dengan harga Rp15.000,-");
+				
 				break;
-			case 3:
-				JOptionPane.showMessageDialog(null, "Anda memesan Soto Ayam dengan harga Rp 25.000,-");
+				case 3 :
+					System.out.println("Anda memesan Soto Ayam dengan harga Rp 25.000,-");
+				
 				break;
-			default:
-				JOptionPane.showMessageDialog(null, "Maaf menu yang Anda masukkan salah");
+				default :
+					System.out.println("Maaf menu yang anda masukan salah.");
+				
 			}
 			
-			pilihanUlang = JOptionPane.showConfirmDialog(null, "Apakah ingin mengulang? [Yes/No]");
-			
-			if(pilihanUlang == JOptionPane.YES_OPTION) {
-				continue;
-			} else if(pilihanUlang == JOptionPane.NO_OPTION) {
-				isPilih = false;
-				JOptionPane.showMessageDialog(null, "Terima kasih telah memesan");
-				System.exit(0);
-			}
-			
-		}
+			System.out.print("Apakah Anda ingin memesan kembali y/n? ");
+			jawab = inputUser.nextLine();
+		
+		}while(jawab.equals("Y"));
+		inputUser.close();
 	}
 }
